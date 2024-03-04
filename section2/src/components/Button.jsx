@@ -1,12 +1,18 @@
 import './Button.css'
-export default function Button({color,text,childern}){
+export default function Button({color,text,children}){
+
+     const onClick = (e) => {
+           console.log(e);
+     }
      return (
           <button 
+               onClick={onClick}
                style={{
+                    text,
                     backgroundColor : color,
                }}
                className="button">
-                    {childern}
+                    {children}
                </button>
      );
 }

@@ -1,5 +1,8 @@
 import './Body.css';
 import Button from './Button';
+function ButtonChild () {
+     return <div>BUTTON CHILD</div>;
+}
 export default function Body(){
      const buttonProps = {
           text : "1번 버튼",
@@ -10,12 +13,12 @@ export default function Body(){
      };
      return (
           <div className="body">
-          <h1>body</h1>
+               <h1>body</h1>
                <Button {...buttonProps}>
-                    <div>버튼</div>
+                    <ButtonChild />
                </Button> 
-          <Button text={"2번 버튼"}/>
-          <Button text={"3번 버튼"}/>
+               <Button text={"2번 버튼"}/>
+               <Button text={"3번 버튼"}/>
           </div>
      );
 }
