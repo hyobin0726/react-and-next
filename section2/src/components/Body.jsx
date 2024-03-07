@@ -1,24 +1,24 @@
 import './Body.css';
-import Button from './Button';
-function ButtonChild () {
-     return <div>BUTTON CHILD</div>;
-}
+import { useState } from 'react';
+
 export default function Body(){
-     const buttonProps = {
-          text : "1번 버튼",
-          color : "red",
-          a : 1,
-          b : 2,
-          c : 3,
-     };
+     const [light, setLight] = useState("OFF");
+
      return (
-          <div className="body">
-               <h1>body</h1>
-               <Button {...buttonProps}>
-                    <ButtonChild />
-               </Button> 
-               <Button text={"2번 버튼"}/>
-               <Button text={"3번 버튼"}/>
-          </div>
+     <div className="body">{light}
+     <button onClick={() => {
+          setLight("ON");
+     }}
+     >
+          켜기
+     </button>
+     <button 
+          onClick={()=>{
+               setLight("OFF");
+          }}
+     >
+          끄기
+          </button>
+     </div>
      );
-}
+     }
