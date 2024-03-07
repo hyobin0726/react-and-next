@@ -1,12 +1,29 @@
 import './Body.css';
 import { useState } from 'react';
 
+function Lightbulb({ light }){
+     return(
+          <>
+          {light == "ON" ? (
+               <div style={{ backgroundColor : "orange"}}>ON</div>
+          ):(
+               <div style={{ backgroundColor : "gray"}}>OFF</div>
+          )}
+          </>
+     );
+}
+
+function StaticLightbulb (){
+     return <div style={{backgroundColor : "gray"}}>OFF</div>; 
+}
 export default function Body(){
      const [light, setLight] = useState("OFF");
 
      return (
-     <div className="body">{light}
-     <button onClick={() => {
+     <div className="body">
+          <Lightbulb light={light}  />     
+          <StaticLightbulb />
+          <button onClick={() => {
           setLight("ON");
      }}
      >
